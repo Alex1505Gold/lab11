@@ -31,7 +31,7 @@ int main()
     std::srand(55);
     std::vector<int> vec0;
     int m = -1;
-    for ( long long int i = 0; i < 126000000; ++i)
+    for ( long long int i = 0; i < 12600000; ++i)
     {
         vec0.push_back(rand());
         //std::cout << vec0[i] << " ";
@@ -53,7 +53,7 @@ int main()
     auto start = std::chrono::steady_clock::now();
     auto stop = std::chrono::steady_clock::now();
     std::vector<int> max;
-    for (int i = 0; i < 10; ++i)
+    for (int i = 0; i < 8; ++i)
     {
         max.push_back(-1);
     }
@@ -62,7 +62,7 @@ int main()
     
     int begin, end, step;
     std::vector<int> cur_vec;
-    for (int j = 1; j <= 10; ++j)
+    for (int j = 1; j <= 8; ++j)
     {
 
         int count_of_threads = j;
@@ -104,7 +104,9 @@ int main()
     }
     //По итогу можно сказать, что при 1 потоке время выполнения примерно 20млн мксек. 
     //При много поточности скорость вырастает до 18 млн мксек
-
+    //Если уменьшить число элементов до 12 600 000, то время выполнения 
+    //Не уменьшится и будет колебаться в районе 1,85 - 1,9 млн мкрсек
+    
 
     return 0;
 }
